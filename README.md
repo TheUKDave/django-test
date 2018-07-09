@@ -4,12 +4,34 @@ This is a Django coding/knowledge test.  You can run this either in docker, or n
 
 Please spend no more than 30 minutes on this test.  Some of the tasks are slightly open-ended, just do whatever you can.  In all tasks, consider that this is in the context of a financial system, and data integrity and precision is of key importance.
 
-### Docker
+### Getting started (Docker)
 
 The Dockerfile includes running of migrations, and then performing the test suite.  So simply be in the root directory of the project, and run:
 
 ```shell
 docker build .
+```
+
+### Getting started (non-Docker)
+
+Install the dependencies:
+
+```shell
+pip install -r requirements.txt
+```
+
+Create/migrate the database (the migrations for the initial version of the accounts app are not versioned):
+
+```shell
+cd project
+python manage.py makemigrations
+python manage.py migrate
+```
+
+Run the tests:
+
+```
+python manage.py test
 ```
 
 ## Tasks
@@ -24,10 +46,7 @@ The Transaction model is fairly basic, and some important information is missing
 
 ### Task 2
 
-The accounts app has a tests.py, which has 2 tests, one of which fails.
-
-Why does the test fail?
-How can you change the application to fix the test?
+The accounts app has a tests.py, which has 2 tests, one of which fails.  Change the application to fix the test.
 
 ### Task 3
 
