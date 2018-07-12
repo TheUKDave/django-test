@@ -2,36 +2,14 @@
 
 This is a Django coding/knowledge test.  You can run this either in docker, or not.  This test is not about Docker, so if you are not familar, please just setup your environment however you normally would.
 
-Please spend no more than 30 minutes on this test.  Some of the tasks are slightly open-ended, just do whatever you can.  In all tasks, consider that this is in the context of a financial system, and data integrity and precision is of key importance.
+Please spend no more than 30 minutes on this test.  Task 4 is optional, only do it if you have time left over.  In all tasks, consider that this is in the context of a financial system, and data integrity and precision is of key importance.
 
-### Getting started (Docker)
+### Docker
 
 The Dockerfile includes running of migrations, and then performing the test suite.  So simply be in the root directory of the project, and run:
 
 ```shell
 docker build .
-```
-
-### Getting started (non-Docker)
-
-Install the dependencies:
-
-```shell
-pip install -r requirements.txt
-```
-
-Create/migrate the database (the migrations for the initial version of the accounts app are not versioned):
-
-```shell
-cd project
-python manage.py makemigrations
-python manage.py migrate
-```
-
-Run the tests:
-
-```
-python manage.py test
 ```
 
 ## Tasks
@@ -46,7 +24,10 @@ The Transaction model is fairly basic, and some important information is missing
 
 ### Task 2
 
-The accounts app has a tests.py, which has 2 tests, one of which fails.  Change the application to fix the test.
+The accounts app has a tests.py, which has 2 tests, one of which fails.
+
+Why does the test fail?
+How can you change the application to fix the test?
 
 ### Task 3
 
@@ -54,4 +35,4 @@ The deposit service is quite basic right now, and not much could go wrong.  But 
 
 ### Task 4
 
-The perform_withdrawal service is unwritten.  Implement a basic version of this service.  What considerations might you need to make for this service, and how might you approach preventing any issues it might raise?
+The perform_withdrawal service is unwritten.  Implement a basic version of this service - no extra models should be required.  What considerations might you need to make for this service, and how might you approach preventing any issues it might raise?
